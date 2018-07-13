@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: albums
+#
+#  id         :bigint(8)        not null, primary key
+#  title      :text
+#  artist_id  :integer
+#  date       :date
+#  tracks     :text
+#  image      :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class Album < ApplicationRecord
+  belongs_to :artist, :optional => true
+  has_many :pressings, :optional => true
+end
