@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Vinyls</title>
+    <title>Audiophiles Annonymous</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Login', login_path %>
+      <%= link_to 'Sign Up', new_user_path %>
+      <% end %>
+      <%# #TODO then want link_to artists and albums and pressing info to show AFTER login to stop people from accessing it without having signed up. kind of like the admin stuff that will show for an admin account %>
+    </nav>
     <%= yield %>
   </body>
 </html>

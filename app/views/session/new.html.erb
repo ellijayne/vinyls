@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<%= form_tag login_path do %>
+  <%= label_tag :username %>
+  <!-- NOTE ASK if this is correct? did use username_field_tag as i believe the below is valid code for this? -->
+  <%= text_field_tag :username %>
+
+  <%= label_tag :email %>
+  <%= email_field_tag :email %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+
+  <%= submit_tag 'Login' %>
+  <% end %>
