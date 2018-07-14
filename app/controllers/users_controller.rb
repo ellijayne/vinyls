@@ -12,7 +12,7 @@ end
     @user = User.new user_params #this will create user var but not in the DB
       if @user.save
         redirect_to '/'
-        ##NOTE TODO change above redirect so user is redirected to their 'dashboard' once they create their account
+        #TODO change above redirect so user is redirected to their 'dashboard' once they create their account
       else
         render :new
       end
