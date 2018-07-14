@@ -14,5 +14,6 @@
 
 class Album < ApplicationRecord
   belongs_to :artist, :optional => true
-  has_many :pressings, :optional => true
+  has_many :pressings
+  has_and_belongs_to_many :users
 end

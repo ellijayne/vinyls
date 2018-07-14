@@ -1,0 +1,26 @@
+<h1>Sign Up</h1>
+
+<% if @user.errors.any? %>
+<ol>
+  <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ol>
+<% end %>
+
+<%= form_for @user do |f| %>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<%= f.label :email %>
+<%= f.email_field :email%>
+<%= f.label :password %>
+<%= f.password_field :password %>
+
+<!-- think i may need these input fields on the form page but commented out for now until john shows us how to do it -->
+
+<!-- # <%#f.label :image %>
+# <%# f.url_field :image %> -->
+
+<%= f.submit "Sign up"%>
+
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_13_093543) do
+ActiveRecord::Schema.define(version: 2018_07_14_032704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(version: 2018_07_13_093543) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "albums_users", id: false, force: :cascade do |t|
+    t.integer "album_id"
+    t.integer "user_id"
+  end
+
   create_table "artists", force: :cascade do |t|
     t.text "name"
     t.text "info"
@@ -35,7 +40,7 @@ ActiveRecord::Schema.define(version: 2018_07_13_093543) do
 
   create_table "artists_users", id: false, force: :cascade do |t|
     t.integer "artist_id"
-    t.integer "song_id"
+    t.integer "user_id"
   end
 
   create_table "pressings", force: :cascade do |t|
@@ -60,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_07_13_093543) do
     t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

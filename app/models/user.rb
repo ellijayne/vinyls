@@ -11,6 +11,15 @@
 #
 
 class User < ApplicationRecord
-  has_many :albums, :optional => true
-  #didnt put HABTM here cos it doesnt belong to artists as all?? but do i need connection? 
+
+  #password
+  #validations
+  has_secure_password
+  validates :email, :presence => true, :uniqueness => true #user can only have account if they enter an email address AND it is not already an email address in the DB
+
+  #associations
+  has_many :albums
+  has_and_belongs_to_many :artists #need HABTM here because you have the joiner table even though users dont really belong to anyone
+  has_and_belongs_to_many :albums
+
 end
