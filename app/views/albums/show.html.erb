@@ -1,0 +1,28 @@
+<h1><%= @album.title %></h1>
+
+<%= image_tag @album.image, :alt => @album.title, :class => 'feature' if @album.image.present? %>
+
+  <ul>
+    <li><%= album.title  %></li>
+    <li><%= album.date %></li>
+    <!-- dont think the line below will work, want to display artist name -->
+    <% if @album.artist.present? %>
+      <li>Artist: <%= link_to @album.artist.name, @album.artist %></li>
+    <% end %>
+    <!-- dont know if below will work, wanted to display pressing -->
+    <% if @album.pressing.present? %>
+      <li>Pressing: <%= link_to @album.pressing params[:id] %></li>
+    <% end %>
+  </ul>
+
+  <!-- TODO need to add controllers that are only visible to admin... maybe edit can be visible to users but delete is only for admin!!!! -->
+
+
+  <!-- <div class="controls">
+    <%= link_to 'edit album', edit_album_path(@album) %>
+
+    <!-- i think the below will make it only visible to admins? -->
+    <!--<% #if @current_user.admin? %>
+    <%#= link_to 'delete album'album_path(@album), :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+    <% #end %>
+  </div>-->
