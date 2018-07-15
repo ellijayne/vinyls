@@ -1,6 +1,6 @@
 #user sseds
 User.destroy_all
-user1 = User.create :username => 'elli_jayne', :email => 'ellijayne.m.willard@gmail.com'
+user1 = User.create :username => 'elli_jayne', :email => 'ellijayne.m.willard@gmail.com', :admin => true
 
 user2 = User.create :username => 'usagi', :email => 'usagi@sailorguardian.com'
 

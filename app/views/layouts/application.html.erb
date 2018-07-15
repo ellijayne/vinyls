@@ -12,6 +12,9 @@
   <body>
     <nav>
       <%= link_to 'Home', root_path %>
+
+      <%= link_to 'Admin Area', users_path if @current_user.admin? %>
+
       <% if @current_user.present? %>
       <%= link_to "Sign Out #{@current_user.username} ", login_path, :method => 'delete' %>
       <!-- dont know if i like it saying 'sign out elli_jayne' at top, if i do keep add a name column function and make it say the persons name? -->
