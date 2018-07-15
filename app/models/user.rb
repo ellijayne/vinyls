@@ -15,7 +15,7 @@ class User < ApplicationRecord
   #password
   #validations
   has_secure_password
-  validates :username, :presence => true, :uniqueness=> true #user can only have account if they pick user name and it can't be a user name already in use. 
+  validates :username, :presence => true, :uniqueness=> true #user can only have account if they pick user name and it can't be a user name already in use.
   validates :email, :presence => true, :uniqueness => true #user can only have account if they enter an email address AND it is not already an email address in the DB
 
   #associations

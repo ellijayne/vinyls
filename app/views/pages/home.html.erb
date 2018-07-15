@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- user greeting - sits right under nav or possibly put it into right hand corner of nav? -->
+
+<% if @current_user.present? %>
+<h3>Welcome back <%= @current_user.username %></h3>
+<% end %>
+
+<!-- heading and tag line -->
+<h1>Records Are Always a Sound Purchase</h1>
+<p>Keep track of all your sick beats and favourite Artists!</p>

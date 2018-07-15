@@ -1,5 +1,6 @@
 <h1>Login</h1>
 
+<%= flash[:error] %>
 <%= form_tag login_path do %>
   <%= label_tag :username %>
   <!-- NOTE ASK if this is correct? did use username_field_tag as i believe the below is valid code for this? -->

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+root :to => 'pages#home'
   get 'session/new'
   get 'pages/home'
   get 'users/new'
@@ -10,6 +11,6 @@ Rails.application.routes.draw do
 
     get '/login' => 'session#new' #login form
     post '/login' => 'session#create' #perform the login
-    delete '/login' => 'session#delete' #perform signout/'delete' the signin
+    delete '/login' => 'session#destroy' #perform signout/'delete' the signin
 
 end
