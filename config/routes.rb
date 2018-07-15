@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
 root :to => 'pages#home'
-  get 'session/new'
-  get 'pages/home'
-  get 'users/new'
-  resources :users, :only => [:new, :create]
+    resources :users, :only => [:new, :create, :index]
+    resources :albums, :only => [:new, :create] #TODO add index too later!
+
+  # get 'session/new' #DONT KNOW WHERE THIS CODE CAME FroM?
+  # get 'pages/home'
+  # get 'users/new'
+
   #the above line is the same as:::::
     # get '/users/new' => 'users#new'
     # post '/users' => 'users#create'

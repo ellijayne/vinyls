@@ -11,7 +11,10 @@ class ApplicationController < ActionController::Base
 
     end
 
+    def check_for_login #think this is to display certain functions once signed in!
+      redirect_to login_path unless @current_user.present?
+    end
 
 
-  
+
 end

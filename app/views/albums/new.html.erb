@@ -1,0 +1,19 @@
+<h1>New Album</h1>
+
+<%= form_for @album do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :artist_id %>
+<%= f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true %>
+
+<%= f.label :date %>
+<%= f.date_field :date %>
+
+<%# trying to use simple_format below, not sure if syntax is right? %>
+<%= f.label :tracks%>
+<%= f.text_field simple_format(:tracks)%>
+
+<%= f.label :image %>
+<%= f.url_field :image %>
+<% end %>
