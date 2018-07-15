@@ -10,7 +10,7 @@
 
 <%# trying to use simple_format below, not sure if syntax is right? %>
 <%= f.label :tracks%>
-<%= f.text_field simple_format(:tracks)%>
+<%= f.text_field :tracks => "#{simple_format (album.tracks)}" %>
 
 <%= f.label :image %>
 <%= f.url_field :image %>

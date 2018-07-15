@@ -1,12 +1,11 @@
 <h1>All Albums</h1>
 
 <%= @albums.each do |album| %>
-  <%= image_tag album.image, :alt => album.name, :class => 'thumbnail' if artist.image.present? %>
+  <%= image_tag album.image, :alt => album.title, :class => 'thumbnail' if album.image.present? %>
   <ul>
     <li><%= album.title  %></li>
     <li><%= album.date %></li>
     <!-- dont think the line below will work, want to display artist name -->
-    <li><%= album.artist params [:id] %></li>
+    <li><%= link_to album.artist.name %></li>
     <% end %>
   </ul>
-  <% end %>
