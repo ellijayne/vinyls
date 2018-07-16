@@ -1,9 +1,10 @@
 <h1>All Artists</h1>
 
 <% @artists.each do |artist| %>
-<%= image_tag artist.image, :alt => artist.name, :class => 'thumbnail' if artist.image.present? %>
+  <%= link_to image_tag(artist.image, :alt => artist.name, :class => 'artist_thumbnail'), artist if artist.image.present? %>
+
 <ul>
-  <li><%= artist.name  %></li>
+  <li><%= link_to artist.name, artist  %></li>
   <!-- want to maybe add short part from info and 'hide' rest until/if they click 'read more' -->
 </ul>
   <% end %>

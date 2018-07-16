@@ -1,3 +1,28 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: grey;
+}
+.album_feature {
+  max-width: 50vw;
+  max-height: 50vh;
+}
+
+.artist_feature {
+  max-width: 50vw;
+  max-height: 50vh;
+
+}
+
+// for now this is ok, but may need to reformat if pictures atart to skew or only pick pics with same shapes
+.artist_thumbnail {
+  width: 20vw;
+  height: 20vh;
+}
+
+.album_thumbnail {
+  max-width: 20vw;
+  max-height: 20 vh;
+}

@@ -1,7 +1,7 @@
 <h1>All Albums</h1>
 
 <% @albums.each do |album| %>
-  <%= link_to image_tag(album.image, :alt => album.title, :class => 'thumbnail'), album if album.image.present? %>
+  <%= link_to image_tag(album.image, :alt => album.title, :class => 'album_thumbnail'), album if album.image.present? %>
   <ul>
     <li><%= album.title  %></li>
     <li><%= album.date %></li>

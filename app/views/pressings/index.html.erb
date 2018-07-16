@@ -3,7 +3,7 @@
 <!-- NOTE TODO either need to add search function to this page or hide the index from people unless they link to it through the album page as it's too hard to view heaps of pressings for each album, its confusing -->
 
 <% @pressings.each do |pressing| %>
-<%= image_tag pressing.image, :alt => pressing.album.title, :class => 'thumbnail' if pressing.image.present? %>
+<%= image_tag pressing.image, :alt => pressing.album.title, :class => 'album_thumbnail' if pressing.image.present? %>
 
 <ul>
   <li><%= pressing.album.title %></li>

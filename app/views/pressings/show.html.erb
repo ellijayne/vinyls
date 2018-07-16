@@ -1,6 +1,6 @@
 <h1><%= @pressing.year %> pressing of <%= @pressing.album.title %></h1>
 
-<%= image_tag @pressing.image, :alt => @pressing.album.title, :class => 'feature' if @pressing.image.present? %>
+<%= image_tag @pressing.image, :alt => @pressing.album.title, :class => 'album_feature' if @pressing.image.present? %>
 
 <ul>
   <li>Pressed: <%= @pressing.year %></li>
