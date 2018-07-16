@@ -1,0 +1,39 @@
+<h1><%= @pressing.year %> pressing of <%= @pressing.album.title %></h1>
+
+<%= image_tag @pressing.image, :alt => @pressing.album.title, :class => 'feature' if @pressing.image.present? %>
+
+<ul>
+  <li>Pressed: <%= @pressing.year %></li>
+  <li>Limited? <%= @pressing.limited %></li>
+
+  <% if @pressing.color.present? %>
+  <li>Color: <%= @pressing.color %></li>
+  <% end %>
+
+  <% if @pressing.weight.present? %>
+  <li>Weight: <%= @pressing.weight %></li>
+  <% end %>
+
+  <p>Gatefold? <%= @pressing.gatefold if @pressing.gatefold.present? %></p>
+
+  <p>Remastered? <%= @pressing.remastered if @pressing.remastered.present? %></p>
+
+
+  <% if @pressing.quantity_pressed.present? %>
+  <li>Quantity Pressed: <%= @pressing.quantity_pressed %></li>
+  <% end %>
+
+  <p>Virgin Vinyl? <%= @pressing.virgin_vinyl if @pressing.virgin_vinyl.present? %></p>
+
+  <p>LP Quantity: <%= @pressing.lp_qty if @pressing.lp_qty.present? %></p>
+
+</ul>
+
+<!-- <div class="controls">
+  <%= link_to 'edit album', edit_album_path(@album) %>
+
+  <!-- i think the below will make it only visible to admins? -->
+  <!--<% #if @current_user.admin? %>
+  <%#= link_to 'delete album'album_path(@album), :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+  <% #end %>
+</div>-->

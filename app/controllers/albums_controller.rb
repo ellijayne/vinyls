@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
   before_action :check_for_login, :only => [:new, :create]
 
   def index #here trying to order albums on index page in alphabetical order
-    @albums = Album.all.order(params[:title])
+    @albums = Album.all.order(:title)
   end
 
   def show

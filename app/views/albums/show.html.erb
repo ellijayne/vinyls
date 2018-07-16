@@ -1,6 +1,7 @@
 <h1><%= @album.title %></h1>
 
-<%= image_tag @album.image, :alt => @album.title, :class => 'feature' if @album.image.present? %>
+<%= image_tag @album.image, :alt => @album.title, :class => 'feature' %>
+<% if @album.image.present? %>
 
   <ul>
     <li><%= @album.title  %></li>
@@ -11,19 +12,25 @@
       <li>Artist: <%= link_to @album.artist.name, @album.artist %></li>
     <% end %>
     <!-- dont know if below will work, wanted to display pressing -->
-    <% if @album.pressing.present? %>
-      <li>Pressing: <%= link_to @album.pressing params[:id] %></li>
+    <% if @album.pressings.any? %>
+      <ul>
+        <% @album.pressings.each do |pressing| %>
+          <li>Color: <%= pressing.color %></li>
+        <% end %>
+      </ul>
+      <li>Pressing: <%= link_to "See pressings", album_pressings_path(@album) %></li>
     <% end %>
   </ul>
 
   <!-- TODO need to add controllers that are only visible to admin... maybe edit can be visible to users but delete is only for admin!!!! -->
 
+  <% end %>
 
-  <!-- <div class="controls">
-    <%= link_to 'edit album', edit_album_path(@album) %>
+    <!-- <div class="controls">
+      <%#= link_to 'edit album', edit_album_path(@album) %>
 
-    <!-- i think the below will make it only visible to admins? -->
-    <!--<% #if @current_user.admin? %>
-    <%#= link_to 'delete album'album_path(@album), :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
-    <% #end %>
-  </div>-->
+      <!-- i think the below will make it only visible to admins? -->
+      <!--<%# if @current_user.admin? %>
+      <%#= link_to 'delete album'album_path(@album), :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+      <%# end %>
+    </div>-->

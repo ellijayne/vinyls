@@ -1,0 +1,14 @@
+<h1>All Pressing Information</h1>
+
+<!-- NOTE TODO either need to add search function to this page or hide the index from people unless they link to it through the album page as it's too hard to view heaps of pressings for each album, its confusing -->
+
+<% @pressings.each do |pressing| %>
+<%= image_tag pressing.image, :alt => pressing.album.title, :class => 'thumbnail' if pressing.image.present? %>
+
+<ul>
+  <li><%= pressing.album.title %></li>
+  <li><%= pressing.year %></li>
+  <li><%= pressing.limited if pressing.limited.present? %></li>
+</ul>
+
+<% end %>

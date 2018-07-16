@@ -1,0 +1,38 @@
+<%= form_for @pressing do |f| %>
+
+<%= f.label :year %>
+<%= f.number_field :year %>
+
+<%= f.label :limited %>
+<%= f.check_box :limited %>
+
+<%= f.label :color %>
+<%= f.text_field :color %>
+
+<!-- would be string field but that doesnt work -->
+<%= f.label :weight %>
+<%= f.text_field  %>
+
+<%= f.label :gatefold %>
+<%= f.check_box :gatefold %>
+
+<%= f.label :remastered %>
+<%= f.check_box :remastered %>
+
+<%= f.label :quantity_pressed %>
+<%= f.number_field :quantity_pressed %>
+
+<%= f.label :virgin_vinyl %>
+<%= f.check_box :virgin_vinyl %>
+
+<!-- would be string field but that doesnt work -->
+<%= f.label :lp_qty %>
+<%= f.text_field :lp_qty %>
+
+
+<%= f.label :image %>
+<%= f.url_field :image %>
+
+<%= f.submit %>
+
+<% end %>

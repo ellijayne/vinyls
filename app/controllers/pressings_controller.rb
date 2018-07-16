@@ -1,7 +1,10 @@
 class PressingsController < ApplicationController
 
+  before_action :check_for_login, :only => [:new, :create]
+
   def index
     @pressings = Pressing.all
+    # render :pressings_path
   end
 
   def show #dont know if i want a show function, probably only want them to show FROM the album page, users can click a link to view different pressings?
