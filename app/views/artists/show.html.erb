@@ -1,0 +1,20 @@
+<h1><%= @artist.name %></h1>
+
+<%= image_tag @artist.image, :alt => @artist.name, :class => 'feature' if @artist.image.present? %> %>
+
+<p><%= @artist.info %></p>
+
+<div class="prev_albums">
+  <!-- wanted to 'dig' to album images? also want to put tracks on back of images but dont know how to do that yet, not sure if this link around the image will work at all.  -->
+  <p><a href="<%= image_tag @artist.albums.image %>"</a></p>
+
+</div>
+
+<!-- <div class="controls">
+  <%= link_to 'edit album', edit_album_path(@album) %>
+
+  <!-- i think the below will make it only visible to admins? -->
+  <!--<% #if @current_user.admin? %>
+  <%#= link_to 'delete album'album_path(@album), :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+  <% #end %>
+</div>-->

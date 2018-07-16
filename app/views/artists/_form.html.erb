@@ -1,0 +1,13 @@
+<%= form_for @artist do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :info %>
+<!-- could change this to simple_format too but need to figure out syntax! -->
+<%= f.text_field :info %>
+
+<%= f.label :image %>
+<%= f.url_field :image %>
+
+<%= f.submit %>
