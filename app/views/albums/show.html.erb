@@ -4,25 +4,42 @@
 <% if @album.image.present? %>
 
   <ul>
-    <li>Realeased: <%= @album.date %></li>
+    <li>Realeased: <%= @album.date.strftime '%e %b %Y' %></li>
 
 
     <% if @album.artist.present? %>
       <li>Artist: <%= link_to @album.artist.name, @album.artist %></li>
     <% end %>
   </ul>
-      <p>Track List: <%= simple_format @album.tracks %>  </p>
+  <% if @album.tracks.present? %>
+  <p>Track List: <%= simple_format @album.tracks %>  </p>
+  <% end %>
 
     <!-- dont know if below will work, wanted to display pressing -->
     <% if @album.pressings.any? %>
       <ul>
         <% @album.pressings.each do |pressing| %>
+          <li>Pressing: <%= link_to "See pressings", album_pressings_path(@album) %></li>
           <li>Color: <%= pressing.color %></li>
+          <li>Pressed in: <%= pressing.year %></li>
+          <% if pressing.limited == true %>
+          <li>Limited</li>
+          <% end %>
+          <% if pressing.quantity_pressed.present? %>
+          <li>Quantity Pressed: <%= pressing.quantity_pressed %></li>
+          <% end %>
+          <% if pressing.weight.present? %>
+          <li>Weight: <%= pressing.weight %></li>
+          <% end %>
+
         <% end %>
+
+
+
       </ul>
-      <li>Pressing: <%= link_to "See pressings", album_pressings_path(@album) %></li>
+
+
     <% end %>
-  </ul>
 
   <!-- TODO need to add controllers that are only visible to admin... maybe edit can be visible to users but delete is only for admin!!!! -->
 
