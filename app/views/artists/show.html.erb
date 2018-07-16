@@ -17,11 +17,11 @@
 </div>
 <% end %>
 
-<!-- <div class="controls">
-  <%# link_to 'edit album', edit_album_path(@album) %>
+<div class="controls">
+  <%= link_to 'edit artist', edit_artist_path(@artist) %>
 
   <!-- i think the below will make it only visible to admins? -->
-  <!--<%# if @current_user.admin? %>
-  <%# link_to 'delete album'album_path(@album), :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
-  <%# end %>
-</div>-->
+  <% if @current_user.admin? %>
+  <%= link_to 'delete artist', artist_path(@artist), :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+  <% end %>
+</div>

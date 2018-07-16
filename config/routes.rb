@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 root :to => 'pages#home'
     get '/users/profile' => 'users#profile'
     resources :users, :only => [:index, :show, :new, :create]
-    resources :albums, :only => [:index, :show, :new, :create] do
+    resources :albums, :only => [:index, :show, :new, :create, :edit, :update, :delete] do
       get '/pressings' => 'pressings#album_index'
     end
 
-    resources :artists, :only => [:index, :show, :new, :create]
+    resources :artists, :only => [:index, :show, :new, :create, :edit, :update, :delete]
     resources :pressings, :only => [:index, :show, :new, :create]
 
   # get 'session/new' #DONT KNOW WHERE THIS CODE CAME FroM?
