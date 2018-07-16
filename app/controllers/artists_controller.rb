@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
 
-  #so below they can still view index and show page but not new or create as they're not logged in. 
+  #so below they can still view index and show page but not new or create as they're not logged in.
   before_action :check_for_login, :only => [:new, :create]
   def index
     #plural artists cos you want the index to display ALL. Hoping the all.order(params[:name]) will put them in alphabetica order.

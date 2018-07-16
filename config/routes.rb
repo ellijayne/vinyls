@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
 root :to => 'pages#home'
-    resources :users, :only => [:new, :create, :index]
+    get '/users/profile' => 'users#profile'
+    resources :users, :only => [:index, :show, :new, :create]
     resources :albums, :only => [:index, :show, :new, :create]
     resources :artists, :only => [:index, :show, :new, :create]
     #TODO add index too later!

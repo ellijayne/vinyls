@@ -1,0 +1,10 @@
+<h1>Welcome back <%= @user.username %></h1>
+
+<%= image_tag @user.image, :alt => @user.username, :class => 'user_img' if @user.image.present? %>
+
+
+<!-- NOTE TODO ADDING USER FAVES LINKS -->
+<%# image_tag @user.album.image, :alt => 'My Records', :class => 'user_albums_img' if @user.album.image.present? %>
+<%# link_to 'My Records', #NEED TO ADD PATH TO USERS RECORDS %>
+<%# image_tag @user.artist.image, :alt => 'Favourite Artists' if @user.artist.image.present? %>
+<%# link_to 'Favourite Artists', #NEED TO ADD PATH! %>

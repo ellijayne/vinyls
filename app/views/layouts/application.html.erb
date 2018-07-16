@@ -13,20 +13,22 @@
     <nav>
       <%= link_to 'Home', root_path %>
 
-      <%# link_to 'Admin Area', users_path if @current_user.admin? %>
-
       <% if @current_user.present? %>
+        <%= link_to 'Admin Area', users_path if @current_user.admin? %>
       <%= link_to "Sign Out #{@current_user.username} ", login_path, :method => 'delete' %>
-      <!-- dont know if i like it saying 'sign out elli_jayne' at top, if i do keep add a name column function and make it say the persons name? -->
-        <%# #TODO then want link_to artists and albums and pressing info to show AFTER login to stop people from accessing it without having signed up. kind of like the admin stuff that will show for an admin account %>
 
-      <% else %>
-      <%= link_to 'Login', login_path %>
-      <%= link_to 'Sign Up', new_user_path %>
+      <%= link_to 'Add New Artist', new_artist_path %>
+      <%= link_to 'Add New Album', new_album_path %>
+      <!-- dont know if i like it saying 'sign out elli_jayne' at top, if i do keep add a name column function and make it say the persons name? -->
+
+        <% else %>
+        <%= link_to 'Login', login_path %>
+        <%= link_to 'Sign Up', new_user_path %>
 
       <% end %>
 
     </nav>
+
     <%= yield %>
   </body>
 </html>

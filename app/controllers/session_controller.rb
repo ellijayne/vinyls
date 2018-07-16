@@ -10,7 +10,7 @@ class SessionController < ApplicationController
       #remember this user in the session hash
       session[:user_id] = user.id
       #and redirect them to home page #NOTE CHANGE THIS TO DASH PAGE!
-      redirect_to root_path
+      redirect_to users_profile_path
       #else if the passwords dont match, redirect them to the login
     else
       #flash is different to session in that it only stores date for one refresh, session stores it until you tell it not to anymore (with destroy method)

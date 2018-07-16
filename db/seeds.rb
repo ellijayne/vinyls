@@ -1,8 +1,8 @@
 #user sseds
 User.destroy_all
-user1 = User.create :username => 'elli_jayne', :email => 'ellijayne.m.willard@gmail.com', :admin => true
+user1 = User.create :username => 'elli_jayne', :email => 'ellijayne.m.willard@gmail.com', :password => 'chicken', :admin => true
 
-user2 = User.create :username => 'usagi', :email => 'usagi@sailorguardian.com'
+user2 = User.create :username => 'usagi', :email => 'usagi@sailorguardian.com', :password => 'chicken'
 
 #album seed info
 Album.destroy_all

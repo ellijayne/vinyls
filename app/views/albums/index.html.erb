@@ -1,6 +1,6 @@
 <h1>All Albums</h1>
 
-<%= @albums.each do |album| %>
+<% @albums.each do |album| %>
   <%= image_tag album.image, :alt => album.title, :class => 'thumbnail' if album.image.present? %>
   <ul>
     <li><%= album.title  %></li>
