@@ -7,6 +7,12 @@ class PressingsController < ApplicationController
     # render :pressings_path
   end
 
+  def album_index
+    @album = Album.find params[:album_id]
+    @pressings = @album.pressings
+    render :index
+  end
+
   def show #dont know if i want a show function, probably only want them to show FROM the album page, users can click a link to view different pressings?
     @pressing = Pressing.find params[:id]
   end

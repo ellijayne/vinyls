@@ -1,5 +1,8 @@
-<h1>All Pressing Information</h1>
-
+<% if @album.present? %>
+  <h1><%= @album.title %> Pressing Information</h1>
+<% else %>
+  <h1>All Pressing Information</h1>
+<% end %>
 <!-- NOTE TODO either need to add search function to this page or hide the index from people unless they link to it through the album page as it's too hard to view heaps of pressings for each album, its confusing -->
 
 <% @pressings.each do |pressing| %>

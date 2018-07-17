@@ -25,6 +25,11 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
+  def favourites
+    @user = User.find params[:user_id]
+    @favourites = @user.albums
+  end
+
   def profile
     @user = @current_user
     render :show

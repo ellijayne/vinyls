@@ -37,7 +37,7 @@ artist1.albums << album1 #putting album1 into artists 1 album section
 artist2.albums << album2
 artist3.albums << album3
 
-#users and albums
+#users and albums # FAVOURITES
 user1.albums << album1 << album2
 user2.albums << album3 << album1
 

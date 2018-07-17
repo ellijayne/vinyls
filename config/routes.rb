@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
 root :to => 'pages#home'
     get '/users/profile' => 'users#profile'
-    resources :users, :only => [:index, :show, :new, :create]
+    resources :users, :only => [:index, :show, :new, :create] do
+      # TODO: READ ABOUT NESTED ROUTES in RAILS GUIDE
+      get '/favourites' => 'users#favourites'
+    end
     resources :albums, :only => [:index, :show, :new, :create, :edit, :update, :delete] do
       get '/pressings' => 'pressings#album_index'
     end

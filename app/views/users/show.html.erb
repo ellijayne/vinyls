@@ -1,5 +1,7 @@
 <h1>Welcome back <%= @user.username %></h1>
 
+<%= link_to 'Favourite Albums', user_favourites_path(@user) %>
+
 <%= image_tag @user.image, :alt => @user.username, :class => 'user_img' if @user.image.present? %>
 
 
