@@ -4,7 +4,9 @@ root :to => 'pages#home'
     get '/users/profile' => 'users#profile'
     resources :users, :only => [:index, :show, :new, :create] do
       # TODO: READ ABOUT NESTED ROUTES in RAILS GUIDE
-      get '/favourites' => 'users#favourites'
+      get '/favourite_albums' => 'users#favourite_albums'
+      get '/favourite_artists' => 'users#favourite_artists'
+      
     end
     resources :albums, :only => [:index, :show, :new, :create, :edit, :update, :delete] do
       get '/pressings' => 'pressings#album_index'

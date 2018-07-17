@@ -25,9 +25,14 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
-  def favourites
+  def favourite_albums
     @user = User.find params[:user_id]
-    @favourites = @user.albums
+    @favourite_albums = @user.albums
+  end
+
+  def favourite_artists
+    @user = User.find params[:user_id]
+    @favourite_artists = @user.artists
   end
 
   def profile
