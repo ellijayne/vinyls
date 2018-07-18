@@ -20,23 +20,50 @@ $mainFont: 'Fjalla One', sans-serif;
 
 body {
   background-color: grey;
-
+  background-image: url("recordhands.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+// body.pages-home.logged-in {
+//
+// }
 
 body.pages-home { //if user not logged in
   background-image: url("recordspinning.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+//nav
+nav {
+    text-align: left;
+    font-weight: bold;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(211, 211, 211);
+    border-bottom-width: 0.1px;
+    padding-bottom: 0.8em;
+    padding-top: 0.5em;
+    background-color: rgba(211, 211, 211, 0.8);
 
 }
 
-body.pages-home.logged-in {
-  background-color: green;
+nav a {
+  padding: 0.4em;
+  color: black;
+  text-decoration: none;
 }
+
+nav a:hover {
+  color: #8C5D4F;
+  transition: 2s;
+}
+
+
 
 /*landing page*/
-
 .logo-box {
   padding-top: 3em;
   color: $highfont;

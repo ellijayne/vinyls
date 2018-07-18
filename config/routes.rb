@@ -25,6 +25,8 @@ root :to => 'pages#home'
     resources :artists, :only => [:index, :show, :new, :create, :edit, :update, :delete]
     resources :pressings, :only => [:index, :show, :new, :create]
 
+    # resources :search, only: =>  [:index]
+
   # get 'session/new' #DONT KNOW WHERE THIS CODE CAME FroM?
   # get 'pages/home'
   # get 'users/new'

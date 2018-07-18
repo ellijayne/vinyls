@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Audiophiles Annonymous</title>
+    <title>Audiophiles</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -21,11 +21,18 @@
         <%= link_to 'Admin Area', users_path if @current_user.admin? %>
       <%= link_to "Sign Out #{@current_user.username} ", login_path, :method => 'delete' %>
 
-
       <%= link_to 'Add New Artist', new_artist_path %>
       <%= link_to 'Add New Album', new_album_path %>
       <%= link_to 'All Artists', artists_path %>
       <%= link_to 'All Tunes', albums_path %>
+      
+        <div class="search">
+          Search Audiophiles:
+          <input type=”text” name=”query” id=”query” placeholder="I want to find…">
+
+          <button type=”submit” name=”commit” value=“Search”>Search</button>
+        </div>
+
       <!-- dont know if i like it saying 'sign out elli_jayne' at top, if i do keep add a name column function and make it say the persons name? -->
 
         <% else %>

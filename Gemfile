@@ -7,6 +7,8 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.0'
 gem 'rails_12factor', group: :production
 gem 'cloudinary'
+gem 'pg_search'
+gem 'bootstrap'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server

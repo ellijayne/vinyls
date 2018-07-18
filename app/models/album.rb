@@ -13,7 +13,12 @@
 #
 
 class Album < ApplicationRecord
+
+  include PgSearch
+  pg_search_scope :search, against: [:title]
+
   belongs_to :artist, :optional => true
   has_many :pressings
   has_and_belongs_to_many :users
+
 end
