@@ -1,10 +1,118 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Yellowtail');
+
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+//NOTE VARIABLES
+
+//$logoFont: 'Yellowtail', cursive;
+
+$logoFont: 'Rock Salt', cursive;
+$highfont: #6BB298;
+$mainFont: 'Fjalla One', sans-serif;
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
 
 body {
   background-color: grey;
 }
+
+/*landing page*/
+
+.logo-box {
+  padding-top: 3em;
+  color: $highfont;
+  font-family: $logoFont;
+
+  .we-are {
+  text-align: left;
+  padding-left: 5em;
+  font-size: 2em;
+  animation: moveInLeft 1s ease-out;
+
+  }
+  .audiophiles-logo {
+    max-width: 90vw;
+    max-height: 50vh;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .catch-line {
+    text-align: center;
+    font-size: 2em;
+    animation: moveInRight 1s ease-in;
+  }
+} //end of logo-box
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); //use x because we want it to move on the x-axis which is left to right across, we are making it -100 so it starts more left than page allows.
+  }
+
+  80% {
+    transform: translateX(10px) //making words go a little passed their final position to the right.
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0); //setting to zero has it find the position specified for it in its original css
+  }
+} //end of moveInLeft
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transfrom: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+} //end of moveInRight
+
+.home-btns {
+  text-align: center;
+
+  a:link,
+  a:visited { //this makes sure the link looks the same before and after it is visted. pseudo class.
+
+    text-decoration: none;
+    color: $highfont;
+    background-color: #fff;
+    padding: 0.5em 2em;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-family: $mainFont;
+    }//end of home-btns
+
+
+  //.btn-login a {
+
+
+  //}
+
+  //.btn-signup a {
+
+
+  //}
+
+}
+
+
+
+//NOTE album and artists feature images
 .album_feature {
   max-width: 50vw;
   max-height: 50vh;
@@ -16,7 +124,7 @@ body {
 
 }
 
-// for now this is ok, but may need to reformat if pictures atart to skew or only pick pics with same shapes
+// NOTE artist and album thumnails for indexes
 .artist_thumbnail {
   width: 20vw;
   height: 20vh;

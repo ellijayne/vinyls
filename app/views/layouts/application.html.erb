@@ -7,6 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="jquery.js"></script>
+    <script src="vivus.js"></script>
+
   </head>
 
   <body>
@@ -14,8 +17,10 @@
       <%= link_to 'Home', root_path %>
 
       <% if @current_user.present? %>
+        <%= link_to 'My Dash', users_profile_path %>
         <%= link_to 'Admin Area', users_path if @current_user.admin? %>
       <%= link_to "Sign Out #{@current_user.username} ", login_path, :method => 'delete' %>
+
 
       <%= link_to 'Add New Artist', new_artist_path %>
       <%= link_to 'Add New Album', new_album_path %>

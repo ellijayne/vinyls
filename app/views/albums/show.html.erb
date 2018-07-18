@@ -45,6 +45,8 @@
 
   <% end %>
 
+  <%= link_to 'Add to Favourites', user_favourite_albums_add_path(@current_user, :album_id => @album.id), :method => 'post' %>
+
     <div class="controls">
       <%= link_to 'edit album', edit_album_path(@album) %>
 

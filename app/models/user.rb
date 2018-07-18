@@ -21,8 +21,13 @@ class User < ApplicationRecord
   validates :email, :presence => true, :uniqueness => true #user can only have account if they enter an email address AND it is not already an email address in the DB
 
   #associations
-  has_and_belongs_to_many :albums
-  has_and_belongs_to_many :artists #need HABTM here because you have the joiner table even though users dont really belong to anyone
-  # has_and_belongs_to_many :albums
-
+  has_and_belongs_to_many :albums, :before_add => :prevent_duplicate_album
+  has_and_belongs_to_many :artists, :before_add => :prevent_duplicate_artist #need HABTM here because you have the joiner table even though users dont really belong to anyone
+  private
+  def prevent_duplicate_artist(artist)
+    raise ActiveRecord::Rollback if self.artists.include?(artist)
+  end
+  def prevent_duplicate_album(album)
+    raise ActiveRecord::Rollback if self.albums.include?(album)
+  end
 end

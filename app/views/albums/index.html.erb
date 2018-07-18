@@ -6,6 +6,9 @@
     <li><%= album.title  %></li>
     <li>Realeased: <%= album.date.strftime '%e %b %Y' %></li>
     <!-- dont think the line below will work, want to display artist name does work BUT also displays all album info at bottom.  -->
-    <li>Artist: <%=link_to album.artist.name, album.artist %></li>
+    
+    <% if album.artist.present? %>
+      <li>Artist: <%=link_to album.artist.name, album.artist %></li>
+    <% end %>
   </ul>
 <% end %>

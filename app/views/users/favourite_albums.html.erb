@@ -1,3 +1,6 @@
 <% @favourite_albums.each do |album| %>
   <p><%= album.title %></p>
-<% end %>
+
+  <%= link_to 'Remove from Favourite Albums',
+  user_favourite_album_destroy_path(@current_user, album.id), :method => 'delete' %>
+  <% end %>

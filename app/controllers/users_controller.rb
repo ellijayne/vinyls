@@ -35,6 +35,29 @@ class UsersController < ApplicationController
     @favourite_artists = @user.artists
   end
 
+  def add_to_favourite_albums
+    album = Album.find params[:album_id]
+    @current_user.albums << album
+    redirect_to user_favourite_albums_path(@current_user)
+  end
+
+  def add_to_favourite_artists
+    artist = Artist.find params[:artist_id]
+    @current_user.artists << artist
+    redirect_to user_favourite_artists_path(@current_user)
+  end
+
+  def destroy_favourite_album
+    @current_user.albums.destroy(params[:album_id])
+    redirect_to user_favourite_albums_path(@current_user)
+  end
+
+  def destroy_favourite_artist
+    @current_user.artists.destroy(params[:artist_id])
+    redirect_to user_favourite_artists_path(@current_user)
+  end
+
+
   def profile
     @user = @current_user
     render :show

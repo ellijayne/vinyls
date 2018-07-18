@@ -4,6 +4,8 @@
 <%= image_tag @artist.image, :alt => @artist.name, :class => 'artist_feature' %>
 
 
+<%= link_to 'Add to Favourite Artists', user_favourite_artists_add_path(@current_user, :artist_id => @artist.id), :method => 'post' %>
+
 <p><%= simple_format @artist.info %></p>
 
 
