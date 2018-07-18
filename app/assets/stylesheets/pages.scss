@@ -20,6 +20,19 @@ $mainFont: 'Fjalla One', sans-serif;
 
 body {
   background-color: grey;
+
+}
+
+body.pages-home { //if user not logged in
+  background-image: url("recordspinning.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+body.pages-home.logged-in {
+  background-color: green;
 }
 
 /*landing page*/
@@ -31,7 +44,7 @@ body {
 
   .we-are {
   text-align: left;
-  padding-left: 5em;
+  padding-left: 2vw;
   font-size: 2em;
   animation: moveInLeft 1s ease-out;
 
@@ -84,6 +97,7 @@ body {
 
 .home-btns {
   text-align: center;
+  margin-top: 2em;
 
   a:link,
   a:visited { //this makes sure the link looks the same before and after it is visted. pseudo class.
@@ -95,20 +109,22 @@ body {
     border-radius: 100px;
     text-transform: uppercase;
     font-family: $mainFont;
-    }//end of home-btns
+    }
 
+  .btn-login {
+    margin-right: 1em;
+  }
 
-  //.btn-login a {
+  .btn-signup {
+    margin-left: 1em;
+  }
 
+  a:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scaleX(1.4) scaleY(1.6);
+  }
 
-  //}
-
-  //.btn-signup a {
-
-
-  //}
-
-}
+}//end of home-btns
 
 
 

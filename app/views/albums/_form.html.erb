@@ -13,7 +13,13 @@
 <%= f.text_area :tracks  %>
 
 <%= f.label :image %>
-<%= f.url_field :image %>
+<%= f.file_field :image %>
+
+<!-- <div class="field"> -->
+<%# form.label :link %><br>
+<!-- this is the choose file button/section -->
+<%# form.file_field :link %>
+<!-- </div> -->
 
 <%# TODO NEED to add pressing info, possibly in drop down or maybe instead let user input themselves? idea was to use API, dont understand how they work, or the nokogiri thing but also dont understand. %>
 <%= f.submit %>

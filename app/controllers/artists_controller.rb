@@ -23,6 +23,9 @@ class ArtistsController < ApplicationController
 
     def create
       artist = Artist.create artist_params
+      cloudinary = Cloudinary::Uploader.upload( params[ "artist" ][ "image" ] )
+      artist.image = cloudinary["url"]
+      artist.save
       redirect_to artist
     end
 

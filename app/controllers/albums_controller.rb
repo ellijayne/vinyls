@@ -16,6 +16,9 @@ class AlbumsController < ApplicationController
 
   def create
     album = Album.create album_params
+    cloudinary = Cloudinary::Uploader.upload( params[ "album" ][ "image" ] )
+    album.image = cloudinary["url"]
+    album.save
     redirect_to album
   end
 

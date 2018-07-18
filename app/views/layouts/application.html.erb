@@ -12,7 +12,7 @@
 
   </head>
 
-  <body>
+  <body class="<%= params[:controller] %>-<%= params[:action] %> <%= "logged-in" if @current_user.present? %>">
     <nav>
       <%= link_to 'Home', root_path %>
 
