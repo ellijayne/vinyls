@@ -1,14 +1,19 @@
+<div class="dashpage">
+
+
+
 <h1>Welcome back <%= @user.username %></h1>
 
-<%= link_to 'My Vinyl Collection', user_favourite_albums_path(@user) %>
+  <div class="fave-albums">
+    <img class="fav-img" src="/assets/favrecords.jpg" /><br />
+    <%= link_to 'My Vinyl Collection', user_favourite_albums_path(@user) %>
+  </div>
 
-<%= link_to 'Favourite Artists', user_favourite_artists_path(@user) %>
 
-<%= image_tag @user.image, :alt => @user.username, :class => 'user_img' if @user.image.present? %>
+  <div class="fave-artists">
+      <img class="fav-img" src="/assets/guitarist.jpg" /><br />
+      <%= link_to 'Favourite Artists', user_favourite_artists_path(@user)%>
+  </div>
 
 
-<!-- NOTE TODO ADDING USER FAVES LINKS -->
-<%# image_tag @user.album.image, :alt => 'My Records', :class => 'user_albums_img' if @user.album.image.present? %>
-<%# link_to 'My Records', #NEED TO ADD PATH TO USERS RECORDS %>
-<%# image_tag @user.artist.image, :alt => 'Favourite Artists' if @user.artist.image.present? %>
-<%# link_to 'Favourite Artists', #NEED TO ADD PATH! %>
+</div>
