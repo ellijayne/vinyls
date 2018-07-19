@@ -11,7 +11,7 @@ album1 = Album.create :title => 'Take Off Your Pants And Jacket', :date => '2001
 
 album2 = Album.create :title => 'Go Farther in Lightness', :date => '2017-08-18', :image => 'album_gofartherinlightness.jpg'
 
-album3 = Album.create :title => 'Kiss', :date => '2012-09-14'
+album3 = Album.create :title => 'High as Hope', :date => '2012-09-14'
 
 #artist seed info
 Artist.destroy_all

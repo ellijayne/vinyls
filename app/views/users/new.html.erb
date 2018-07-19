@@ -1,28 +1,36 @@
-<h1>Sign Up</h1>
+<div class="login-page">
 
-<% if @user.errors.any? %>
-<ol>
-  <% @user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
+  <h1>Sign Up <%= image_tag '/assets/recordicon.png', :class => "record-icon" %></h1>
+
+  <% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ol>
   <% end %>
-</ol>
-<% end %>
 
-<%= form_for @user do |f| %>
-<%= f.label :username %>
-<!-- making sure user name is required for sign up and so is email -->
-<%= f.text_field :username, :required => true %>
+  <%= form_for @user do |f| %>
+  <div id="inner-signup">
 
-<%= f.label :email %>
-<%= f.email_field :email, :required => true %>
-<%= f.label :password %>
-<%= f.password_field :password %>
 
-<!-- think i may need these input fields on the form page but commented out for now until john shows us how to do it -->
+  <%= f.label :username %>
+  <!-- making sure user name is required for sign up and so is email -->
+  <%= f.text_field :username, :required => true, :class => "input-field" %>
+  <br />
 
-<!-- # <%#f.label :image %>
-# <%# f.url_field :image %> -->
+  <%= f.label :email %>
+  <%= f.email_field :email, :required => true, :class => "email-field" %>
+  <br />
+  <%= f.label :password %>
+  <%= f.password_field :password, :class => "input-field" %>
+  <br />
+  <!-- think i may need these input fields on the form page but commented out for now until john shows us how to do it -->
 
-<%= f.submit "Sign up"%>
-
-<% end %>
+  <!-- # <%#f.label :image %>
+  # <%# f.url_field :image %> -->
+  <br />
+  <%= f.submit "Sign up", :class => "submit-btn" %>
+  </div>
+  <% end %>
+</div>

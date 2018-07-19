@@ -52,7 +52,7 @@ nav {
   padding-top: 0.5em;
 
   .mini-logo {
-    max-width: 7em;
+    max-width: 8.5em;
   }
 
   a {
@@ -160,11 +160,24 @@ nav {
 ////////////////////////HOME////////////////////////
 .homepage {
   width: 90vw;
-  padding: 2em 0;
-  margin-top: 15vh;
+  margin-top: 13vh;
   margin-left: 5vw;
   margin-right: 5vw;
   text-align: center;
+
+  p {
+    color: $highfont;
+  }
+
+  .search-btn {
+    padding: 0 0.8em;
+    border: 2px solid grey;
+    border-radius: 3px;
+  }
+
+  .search-input {
+    border-radius: 3px;
+  }
 }
 
 ////////////////////////////DASH////////////////////////
@@ -220,10 +233,72 @@ nav {
   }
 } //end of favesMoveIn
 
-
 } //end of dashpage
 
+////////////////LOGIN PAGE///////////////
+.login-page {
+  width: 450px;
+  background-color: rgba(178, 255, 227, 0.6);
+  text-align: center;
+  display: block;
+  padding: 3em;
+  margin: 0 auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  margin-top: 20vh;
+  border: 2px solid white;
+  animation: loginMoveIn 1s ease-in;
 
+  h1 {
+    padding-bottom: 0.8em;
+    text-align: center;
+  }
+  .inner-form {
+    max-width: 40%;
+    text-align: center;
+  }
+
+  .inner-signup {
+    text-align: center;
+  }
+
+  .input-field {
+    border: 2px solid grey;
+    border-radius: 3px;
+    max-width: 110%;
+  }
+
+  .email-field {
+    @extend .input-field;
+    margin-left: 29px;
+    }
+
+  .submit-btn {
+    padding: 0.2em 1em;
+    border-radius: 3px;
+  }
+
+  .record-icon {
+    max-width: 6vw;
+  }
+
+} //end of loginpage
+
+@keyframes loginMoveIn {
+  0% {
+  opacity: 0;
+  transform: rotateY(180deg); //use x because we want it to move on the x-axis which is left to right across, we are making it -100 so it starts more left than page allows.
+  }
+
+  80% {
+  transform: translateY(-10px) //making words go a little passed their final position to the right.
+  }
+
+  100% {
+  opacity: 1;
+  transform: translate(0); //setting to zero has it find the position specified for it in its original css
+  }
+} //end of favesMoveIn
 //////////////FORMS//////////////
 
 .album-artist-form {

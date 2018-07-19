@@ -1,13 +1,23 @@
-<h1>Login</h1>
-
-<%= flash[:error] %>
-<%= form_tag login_path do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
+<div class="login-page">
 
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <h1>Login <%= image_tag '/assets/recordicon.png', :class => "record-icon" %></h1>
 
-  <%= submit_tag 'Login' %>
-  <% end %>
+  <%= flash[:error] %>
+  <%= form_tag login_path do %>
+
+    <%= label_tag :username %>
+
+    <%= text_field_tag :username, nil, :class => "input-field" %>
+
+    <br />
+    <%= label_tag :password %>
+
+    <%= password_field_tag :password, nil, :class => "input-field" %>
+    <br />
+    <%= submit_tag 'Login', :class => "submit-btn" %>
+    <% end %>
+
+
+
+</div>
