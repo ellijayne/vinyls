@@ -4,12 +4,13 @@
 
     <div class="album-grid">
 
-      <p><%= album.title %></p>
+
 
         <%= link_to image_tag(album.image, :alt => album.title, :class => 'album_thumbnail'), album %>
 
         <% if album.image.present? %>
-          <%= link_to 'Remove from Favourites',
+        <p><%= album.title %></p>
+          <%= link_to 'Remove from Collection',
           user_favourite_album_destroy_path(@current_user, album.id), :method => 'delete' %>
         <% end %>
     </div>
