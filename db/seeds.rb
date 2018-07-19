@@ -2,9 +2,9 @@
 User.destroy_all
 user1 = User.create :username => 'elli_jayne', :email => 'ellijayne.m.willard@gmail.com', :password => 'chicken', :admin => true
 
-user2 = User.create :username => 'brucey_Springsteen', :email => 'bruce@psringsteen.com', :password => 'chicken'
+user2 = User.create :username => 'brucey_springsteen', :email => 'bruce@psringsteen.com', :password => 'chicken'
 
-user3 = User.create :username => 'Ringo', :email => 'ringo@beatles.com', :password => 'chicken'
+user3 = User.create :username => 'ringo', :email => 'ringo@beatles.com', :password => 'chicken'
 
 #album seed info
 Album.destroy_all
@@ -66,7 +66,7 @@ user3.albums << album5 << album3 << album6
 
 #users and artists? dont know if this is favouriting???
 user1.artists << artist1 << artist2 << artist3
-user2.artists << artist1 << artist3 << artist4 << artist6
+user2.artists << artist1 << artist3 << artist4 << artist5
 user3.artists << artist5 << artist3 << artist3
 
 # assoc pressings into albums
