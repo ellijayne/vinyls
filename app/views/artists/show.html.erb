@@ -9,7 +9,7 @@
   <%= image_tag @artist.image, :alt => @artist.name, :class => 'artist_feature' %>
 
   <br />
-  <%= link_to 'Add to Favourite Artists', user_favourite_artists_add_path(@current_user, :artist_id => @artist.id), :method => 'post' %>
+
 
   <div class="artist-info">
     <p><%= simple_format @artist.info %></p>
@@ -18,18 +18,14 @@
 
 
   <div class="prev_albums">
-    <!-- wanted to 'dig' to album images? also want to put tracks on back of images but dont know how to do that yet, not sure if this link around the image will work at all.  -->
-
-
-        <% @artist.albums.each do |album| %>
-        <%= link_to image_tag(album.image, :class => 'album_thumbnail'), album  %>
-        <% end %>
-
-
+      <% @artist.albums.each do |album| %>
+      <%= link_to image_tag(album.image, :class => 'album_thumbnail'), album  %>
+      <% end %>
   </div><!--end of previous albums div-->
   <% end %>
 
-  <div class="controls">
+  <div class="artist-info">
+      <%= link_to 'Add to Favourite Artists', user_favourite_artists_add_path(@current_user, :artist_id => @artist.id), :method => 'post' %> |
     <%= link_to 'edit artist', edit_artist_path(@artist) %>
 
     <!-- i think the below will make it only visible to admins? -->

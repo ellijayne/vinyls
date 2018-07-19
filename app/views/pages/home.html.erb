@@ -56,7 +56,7 @@
     <%= link_to 'Sign Up', new_user_path, :class => "btn-signup" %>
   <!-- </div> -->
 </div> <!--end of sign in up buttons div-->
-<% end %>
+<% else %>
 
 
 <!-- SIGNED IN HOME PAGE heading and tag line -->
@@ -73,3 +73,4 @@
     <button class="search-btn" type="submit" name="commit" value="Search">Search</button>
   </form>
 </div>
+<% end %>

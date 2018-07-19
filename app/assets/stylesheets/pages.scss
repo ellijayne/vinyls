@@ -7,8 +7,8 @@
 //NOTE VARIABLES
 
 $logoFont: 'Rock Salt', cursive;
-$highfont: #4E826F;
-$hoverfont: #6BB298;
+$highfont: #6BB298;
+$hoverfont: #4E826F;
 $mainFont: 'Fjalla One', sans-serif;
 
 * {
@@ -238,7 +238,7 @@ nav {
 ////////////////LOGIN PAGE///////////////
 .login-page {
   width: 450px;
-  background-color: rgba(178, 255, 227, 0.6);
+  background-color: rgba(107, 178, 152, 0.6);
   text-align: center;
   display: block;
   padding: 3em;
@@ -322,6 +322,7 @@ nav {
 
 .fave-artists-container {
   text-align: center;
+  animation: favesMoveIn 1s ease-in;
 
   a {
     text-decoration: none;
@@ -335,6 +336,7 @@ nav {
 
 .fave-albums-container{
   @extend .fave-artists-container;
+  animation: moveInLeft 1s ease-out;
 }
 
 .artist-grid {
@@ -354,6 +356,7 @@ nav {
 //////ALBUMS INDEX STYLES/////
 .index-albums-container {
   text-align: center;
+  animation: loginMoveIn 1s ease-in;
 }
 
 .index-album-grid {
@@ -375,6 +378,7 @@ nav {
 
 .index-artists-container {
     text-align: center;
+    animation: loginMoveIn 1s ease-in;
 }
 
 .index-artist-grid {
@@ -443,7 +447,6 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  ;
   border-radius: 5px;
   backface-visibility: hidden;
   overflow: hidden;
@@ -454,9 +457,40 @@ nav {
   transform: rotateY(180deg);
 
 }
+///rest of album show////
+.album-show {
+  display: inline-block;
+  padding: 1em;
+  text-align: center;
+}
+  .info-album-show {
+    text-align: center;
+    margin-top: 23%;
+    position:sticky;
 
-///rest of artist show////
+    a {
+      text-decoration: none;
+      color: $highfont
+    }
 
+    a:hover {
+      color: $hoverfont;
+      transition: 0.5s;
+    }
+}
+
+.controls {
+  @extend .album-show;
+
+}
+
+.controls a {
+  color: $highfont;
+  text-decoration: none;
+}
+  .controls a:hover {
+    color: $hoverfont;
+}
 
 /////////////SEARCH RESULTS PAGE////////////
 .result-page {
@@ -525,7 +559,6 @@ nav {
     text-align: center;
   }
 }
-
 
 
 ///////IMAGES CSS ///////
