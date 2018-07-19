@@ -1,0 +1,27 @@
+<div class="result-page">
+
+
+  <h1>Here's What We Found....</h1>
+
+  <% @results.each do |result| %>
+
+    <div class="artist-result">
+
+
+      <ul>
+
+
+        <li>
+          <%= link_to result.name, result %>
+        </li>
+
+        <li>
+          <%= link_to image_tag(result.image, :class => 'artist_feature'), result %>
+        </li>
+
+      </ul>
+    </div>
+  <% end %>
+
+
+  </div>

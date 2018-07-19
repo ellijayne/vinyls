@@ -7,7 +7,8 @@
 //NOTE VARIABLES
 
 $logoFont: 'Rock Salt', cursive;
-$highfont: #4E826F; //#6BB298;
+$highfont: #4E826F;
+$hoverfont: #6BB298;
 $mainFont: 'Fjalla One', sans-serif;
 
 * {
@@ -223,8 +224,6 @@ nav {
 } //end of dashpage
 
 
-
-
 //////////////FORMS//////////////
 
 .album-artist-form {
@@ -238,36 +237,13 @@ nav {
 
 }
 
-
-
-
-
-
-
-
-
-//NOTE album and artists feature images
-.album_feature {
-  max-width: 50vw;
-  max-height: 50vh;
+.teensy {
+  width: 12vw;
+  border-radius: 3px;
 }
 
-.artist_feature {
-  max-width: 50vw;
-  max-height: 50vh;
 
-}
-
-// NOTE artist and album thumnails for indexes
-.artist_thumbnail {
-  width: 20vw;
-  height: 20vh;
-}
-
-.album_thumbnail {
-  max-width: 20vw;
-  max-height: 20 vh;
-}
+////////ARTISTS INDEX//////////////
 
 .fave-artists-container {
   text-align: center;
@@ -298,12 +274,6 @@ nav {
 
 .album-grid {
   @extend .artist-grid;
-
-}
-
-.teensy {
-  width: 12vw;
-  border-radius: 3px;
 }
 
 //////ALBUMS INDEX STYLES/////
@@ -353,3 +323,61 @@ nav {
     color: #6BB298;
   }
 } //end of index album
+
+/////////////SEARCH RESULTS PAGE////////////
+.result-page {
+  padding: 1em;
+
+  h1 {
+    padding-bottom: 1em;
+  }
+}
+
+.artist-result {
+    text-align: center;
+
+  ul {
+      list-style-type: none;
+  }
+
+
+  a {
+    text-decoration: none;
+    color: $highfont;
+    font-size: 2em;
+
+  }
+
+  a:hover {
+    color: $hoverfont;
+  }
+
+  img {
+    border-radius: 5px;
+  }
+}
+
+///////IMAGES CSS ///////
+
+//NOTE album and artists feature images
+.album_feature {
+  max-width: 50vw;
+  max-height: 50vh;
+}
+
+.artist_feature {
+  max-width: 50vw;
+  max-height: 50vh;
+
+}
+
+// NOTE artist and album thumnails for indexes
+.artist_thumbnail {
+  width: 20vw;
+  height: 20vh;
+}
+
+.album_thumbnail {
+  max-width: 20vw;
+  max-height: 20 vh;
+}

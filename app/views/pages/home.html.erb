@@ -59,13 +59,17 @@
 <% end %>
 
 
-
-<%# if @current_user.present? %>
-<!-- <h3 class="welcome">Welcome back <%# (@current_user.username).capitalize %></h3> -->
-<%# end %>
-
-<!-- heading and tag line -->
+<!-- SIGNED IN HOME PAGE heading and tag line -->
 <div class="homepage">
-<h1>Records Are Always a Sound Purchase</h1>
-<p>Keep track of all your sick beats and favourite Artists!</p>
+  <h1>Records Are Always a Sound Purchase</h1>
+  <p>Keep track of all your sick beats and favourite Artists!</p>
+</div>
+
+<div class="homepage">
+  <form class="search" action="/search" method="get">
+    Search Audiophiles:
+    <input type="text" name="query" id="query" placeholder="I want to find…">
+
+    <button type="submit" name="commit" value="Search">Search</button>
+  </form>
 </div>
