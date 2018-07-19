@@ -30,6 +30,8 @@
         <div class="dropdown-menu">
             <%= link_to 'All Artists', artists_path, :class => "dropdown-item" %>
 
+            <%= link_to 'Favourite Artists', user_favourite_artists_path(@user), :class => "dropdown-item" %>
+
           <div class="dropdown-divider"></div>
             <%= link_to 'Add New Artist', new_artist_path, :class => "dropdown-item" %>
         </div>
@@ -38,8 +40,10 @@
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Albums</a>
           <div class="dropdown-menu">
             <%= link_to 'All Tunes', albums_path, :class => "dropdown-item" %>
-            <div class="dropdown-divider"></div>
 
+            <%= link_to 'My Vinyls', user_favourite_albums_path(@user), :class => "dropdown-item" %>
+
+            <div class="dropdown-divider"></div>
               <%= link_to 'Add New Album', new_album_path, :class => "dropdown-item" %>
           </div>
       </li>

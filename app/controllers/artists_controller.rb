@@ -36,9 +36,11 @@ class ArtistsController < ApplicationController
   def update
     artist = Artist.find params[:id]
 
-    cloudinary = Cloudinary::Uploader.upload( params[ "artist" ][ "image" ] )
-    #replace params image with cloudinary url
-    params[:artist][:image]=cloudinary["url"]
+    if params[:artist][:image].present?
+      cloudinary = Cloudinary::Uploader.upload(params[:artist][:image])
+      #replace params image with cloudinary url
+      params[:artist][:image]=cloudinary["url"]
+    end
     artist.update artist_params
     redirect_to artist
   end

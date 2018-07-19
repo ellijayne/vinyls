@@ -2,14 +2,16 @@
 
 
 <% @favourite_artists.each do |artist| %>
-  <p><%= artist.name %></p>
+  <div class="artist-grid">
+    <p><%= artist.name %></p>
 
-  <% if artist.image.present? %>
-  <%= image_tag artist.image, :alt => artist.name, :class => 'artist_thumbnail' %>
-  <% end %>
+    <% if artist.image.present? %>
+    <%= link_to image_tag(artist.image, :alt => artist.name, :class => 'artist_thumbnail'), artist %>
+    <% end %>
 
-  <%= link_to 'Remove from Favourite Artists',
-  user_favourite_artist_destroy_path(@current_user, artist.id), :method => 'delete' %>
+    <%= link_to 'Remove from Favourites',
+    user_favourite_artist_destroy_path(@current_user, artist.id), :method => 'delete' %>
+  </div>
 <% end %>
 
 </div>

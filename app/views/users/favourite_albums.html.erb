@@ -1,11 +1,16 @@
 <div class="fave-albums-container">
 
   <% @favourite_albums.each do |album| %>
-    <p><%= album.title %></p>
 
-    <%= image_tag @album.image, :alt => @album.title, :class => 'album_thumbnail' %>
-    <% if @album.image.present? %>
+    <div class="album-grid">
 
-    <%= link_to 'Remove from Favourite Albums',
-    user_favourite_album_destroy_path(@current_user, album.id), :method => 'delete' %>
+      <p><%= album.title %></p>
+
+        <%= link_to image_tag(album.image, :alt => album.title, :class => 'album_thumbnail'), album %>
+
+        <% if album.image.present? %>
+          <%= link_to 'Remove from Favourites',
+          user_favourite_album_destroy_path(@current_user, album.id), :method => 'delete' %>
+        <% end %>
+    </div>
   <% end %>
