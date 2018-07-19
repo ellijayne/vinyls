@@ -1,10 +1,14 @@
 <h1>All Artists</h1>
 
+<div class="index-artists-container">
 <% @artists.each do |artist| %>
-  <%= link_to image_tag(artist.image, :alt => artist.name, :class => 'artist_thumbnail'), artist if artist.image.present? %>
 
-<ul>
-  <li><%= link_to artist.name, artist  %></li>
-  <!-- want to maybe add short part from info and 'hide' rest until/if they click 'read more' -->
-</ul>
-  <% end %>
+  <div class="index-artist-grid">
+    <%= link_to image_tag(artist.image, :alt => artist.name, :class => 'artist_thumbnail'), artist if artist.image.present? %>
+
+      <ul>
+        <li><%= link_to artist.name, artist  %></li>
+        <!-- want to maybe add short part from info and 'hide' rest until/if they click 'read more' -->
+      </ul>
+  </div>
+<% end %>

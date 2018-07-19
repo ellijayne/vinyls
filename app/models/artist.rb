@@ -13,4 +13,7 @@
 class Artist < ApplicationRecord
   has_many :albums
   has_and_belongs_to_many :users
+
+  include PgSearch
+  pg_search_scope :search, against: [:name]
 end

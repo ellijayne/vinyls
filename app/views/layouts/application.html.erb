@@ -60,12 +60,12 @@
       <%= link_to 'Sign Up', new_user_path, :class => "nav-link" %>
     <% end %>
   </ul>
-        <!-- <div class="search">
+        <form class="search" action="/search" method="get">
           Search Audiophiles:
-          <input type=”text” name=”query” id=”query” placeholder="I want to find…">
+          <input type="text" name="query" id="query" placeholder="I want to find…">
 
-          <button type=”submit” name=”commit” value=“Search”>Search</button>
-        </div> -->
+          <button type="submit" name="commit" value="Search">Search</button>
+        </form>
 
     </nav>
 

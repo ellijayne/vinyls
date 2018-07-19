@@ -173,7 +173,7 @@ nav {
   display: inline-block;
 
   h1 {
-    padding: 1em;
+    padding: 0.4em;
   }
 
   a {
@@ -194,13 +194,31 @@ nav {
   .fave-albums, .fave-artists {
     text-align: center;
     display: inline-block;
+    animation: favesMoveIn 1s ease-in;
+
+    img {
+      width: 30vw;
+      padding: 0.8em;
+      border-radius: 500px;
+    }
   }
 
-  .fav-img {
-    width: 30vw;
-    padding: 0.8em;
-    border-radius: 500px;
+@keyframes favesMoveIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); //use x because we want it to move on the x-axis which is left to right across, we are making it -100 so it starts more left than page allows.
   }
+
+  80% {
+    transform: translateY(-10px) //making words go a little passed their final position to the right.
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0); //setting to zero has it find the position specified for it in its original css
+  }
+} //end of favesMoveIn
+
 
 } //end of dashpage
 
@@ -253,6 +271,15 @@ nav {
 
 .fave-artists-container {
   text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $highfont;
+  }
+
+  a:hover {
+    color: #6BB298;
+  }
 }
 
 .fave-albums-container{
@@ -263,6 +290,10 @@ nav {
   display:inline-block;
   width: 24vw;
 
+  .artist_thumbnail {
+    border-radius: 10px;
+  }
+
 }
 
 .album-grid {
@@ -272,20 +303,53 @@ nav {
 
 .teensy {
   width: 12vw;
+  border-radius: 3px;
 }
 
+//////ALBUMS INDEX STYLES/////
 .index-albums-container {
   text-align: center;
-
 }
 
 .index-album-grid {
   display:inline-block;
   width: 24vw;
 
-ul {
-  list-style-type: none;
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    color: $highfont;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #6BB298;
+  }
+} //end of index album
+
+.index-artists-container {
+    text-align: center;
 }
 
+.index-artist-grid {
+  display:inline-block;
+  width: 24vw;
 
-}
+  ul {
+    list-style-type: none;
+  }
+
+  .artist_thumbnail {
+    border-radius: 10px;
+  }
+
+  a {
+    color: $highfont;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #6BB298;
+  }
+} //end of index album

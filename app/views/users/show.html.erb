@@ -5,13 +5,13 @@
 <h1>Welcome back <%= (@user.username).capitalize %></h1>
 
   <div class="fave-albums">
-    <img class="fav-img" src="/assets/favrecords.jpg" /><br />
+    <%= link_to image_tag("favrecords.jpg"), user_favourite_albums_path(@user), :class => "fav-img" %><br />
     <%= link_to 'My Vinyl Collection', user_favourite_albums_path(@user) %>
   </div>
 
 
   <div class="fave-artists">
-      <img class="fav-img" src="/assets/guitarist.jpg" /><br />
+      <%= link_to image_tag("guitarist.jpg"), user_favourite_artists_path(@user), :class => "fav-img" %><br />
       <%= link_to 'Favourite Artists', user_favourite_artists_path(@user)%>
   </div>
 

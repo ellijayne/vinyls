@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 root :to => 'pages#home'
+    get "/" => 'pages#home'
     get '/users/profile' => 'users#profile'
     resources :users, :only => [:index, :show, :new, :create] do
       # TODO: READ ABOUT NESTED ROUTES in RAILS GUIDE
@@ -25,9 +26,7 @@ root :to => 'pages#home'
     resources :artists, :only => [:index, :show, :new, :create, :edit, :update, :delete]
     resources :pressings, :only => [:index, :show, :new, :create]
 
-    # resources :search, only: =>  [:index]
-
-  # get 'session/new' #DONT KNOW WHERE THIS CODE CAME FroM?
+  # get 'session/new' #DONT KNOW WHERE THIS CODE CAME FROM?
   # get 'pages/home'
   # get 'users/new'
 
@@ -38,5 +37,7 @@ root :to => 'pages#home'
     get '/login' => 'session#new' #login form
     post '/login' => 'session#create' #perform the login
     delete '/login' => 'session#destroy' #perform signout/'delete' the signin
+
+    get "/search" => 'search#results'
 
 end
