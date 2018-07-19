@@ -28,10 +28,12 @@ class AlbumsController < ApplicationController
 
   def update
     album = Album.find params[:id]
+    if params[:album][:image].present?
     #upload file
-    cloudinary = Cloudinary::Uploader.upload( params[ "album" ][ "image" ] )
-    #replace params image with cloudinary url
-    params[:album][:image]=cloudinary["url"]
+      cloudinary = Cloudinary::Uploader.upload( params[ "album" ][ "image" ] )
+      #replace params image with cloudinary url
+      params[:album][:image]=cloudinary["url"]
+    end
     album.update album_params
     redirect_to album
   end

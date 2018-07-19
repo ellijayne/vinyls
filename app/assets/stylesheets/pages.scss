@@ -262,12 +262,30 @@ nav {
 .artist-grid {
   display:inline-block;
   width: 24vw;
+
 }
 
 .album-grid {
   @extend .artist-grid;
+
 }
 
 .teensy {
-  width: 10vw;
+  width: 12vw;
+}
+
+.index-albums-container {
+  text-align: center;
+
+}
+
+.index-album-grid {
+  display:inline-block;
+  width: 24vw;
+
+ul {
+  list-style-type: none;
+}
+
+
 }
