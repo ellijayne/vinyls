@@ -1,8 +1,31 @@
+
 <h1><%= @album.title %></h1>
 
-<% if @album.image.present? %>
-<%= image_tag @album.image, :alt => @album.title, :class => 'album_feature' %>
-<% end %>
+<div class="card">
+  <div class="content">
+
+    <div class="front">
+      <%# if @album.image.present? %>
+      <%= image_tag @album.image, :alt => @album.title, :class => 'album_feature' %>
+      <%# end %>
+    </div><!--end of front div-->
+
+    <div class="back">
+      <%# if @album.tracks.present? %>
+      <p>Track List: <%= simple_format @album.tracks %>  </p>
+      <%# end %>
+    </div><!--end of back div-->
+
+  </div> <!--end of content div -->
+</div><!--end of card div-->
+
+
+
+
+
+
+
+
 
   <ul>
     <li>Realeased: <%= @album.date.strftime '%e %b %Y' %></li>
@@ -13,9 +36,6 @@
     <% end %>
 
   </ul>
-  <% if @album.tracks.present? %>
-  <p>Track List: <%= simple_format @album.tracks %>  </p>
-  <% end %>
 
     <!-- dont know if below will work, wanted to display pressing -->
     <% if @album.pressings.any? %>

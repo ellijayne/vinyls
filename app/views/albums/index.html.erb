@@ -2,9 +2,11 @@
 <div class="index-albums-container">
 
   <% @albums.each do |album| %>
+    <div class="index-album-grid">
 
-  <div class="index-album-grid">
       <%= link_to image_tag(album.image, :alt => album.title, :class => 'album_thumbnail'), album if album.image.present? %>
+
+
 
     <ul>
       <li><%= album.title  %></li>
@@ -17,5 +19,5 @@
         <br />
       <% end %>
     </ul>
-  </div>
+</div> <!-- end of the grid div-->
   <% end %>

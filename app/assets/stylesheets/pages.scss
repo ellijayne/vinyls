@@ -399,6 +399,65 @@ nav {
   }
 } //end of index album
 
+////////ALBUM SHOW PAGE//////
+////cardflip css////
+.card {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
+
+.content:hover {
+  transform: rotateY(180deg);
+}
+
+.front { //.back
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  ;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: rgb(169,169,169);
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  transform: rotateY(180deg);
+
+}
+
+///rest of artist show////
+
+
 /////////////SEARCH RESULTS PAGE////////////
 .result-page {
   padding: 1em;
@@ -431,6 +490,43 @@ nav {
     border-radius: 5px;
   }
 }
+
+/////////////ARTIST SHOW///////////
+
+.artist-show {
+  margin: 2vw;
+  display: grid;
+  grid-template-columns: 4(repeat, 1fr);
+  grid-template-rows: auto;
+
+  .artist-sect {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .prev_albums {
+    grid-column-start: 3;
+  }
+
+  .artist_feature {
+    border-radius: 5px;
+  }
+
+  a {
+    color: $highfont;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $hoverfont;
+  }
+  .artist-info {
+    max-width: 500px;
+    text-align: center;
+  }
+}
+
+
 
 ///////IMAGES CSS ///////
 

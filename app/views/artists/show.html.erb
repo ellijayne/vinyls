@@ -1,41 +1,40 @@
-<h1><%= @artist.name %></h1>
-
-<% if @artist.image.present? %>
-<%= image_tag @artist.image, :alt => @artist.name, :class => 'artist_feature' %>
+<div class="artist-show">
 
 
-<%= link_to 'Add to Favourite Artists', user_favourite_artists_add_path(@current_user, :artist_id => @artist.id), :method => 'post' %>
+  <h1><%= @artist.name %></h1>
 
-<p><%= simple_format @artist.info %></p>
+  <div class="artist-sect">
+
+  <% if @artist.image.present? %>
+  <%= image_tag @artist.image, :alt => @artist.name, :class => 'artist_feature' %>
+
+  <br />
+  <%= link_to 'Add to Favourite Artists', user_favourite_artists_add_path(@current_user, :artist_id => @artist.id), :method => 'post' %>
+
+  <div class="artist-info">
+    <p><%= simple_format @artist.info %></p>
+  </div>
+</div><!--end of artist sect div-->
 
 
-<div class="prev_albums">
-  <!-- wanted to 'dig' to album images? also want to put tracks on back of images but dont know how to do that yet, not sure if this link around the image will work at all.  -->
-  <div class="thecard">
+  <div class="prev_albums">
+    <!-- wanted to 'dig' to album images? also want to put tracks on back of images but dont know how to do that yet, not sure if this link around the image will work at all.  -->
 
-    <div class="thefront">
 
-      <% @artist.albums.each do |album| %>
-      <%= link_to image_tag(album.image, :class => 'album_thumbnail'), album  %>
-      <% end %>
-    </div> <!--end of the front div-->
-    <div class="theback">
-      <% @artist.albums.each do |album| %>
-      <% if album.tracks.present? %>
-      <p>Track List: <%= simple_format album.tracks, :class => "mini-tracks" %>  </p>
-      <% end %>
-      <% end %>
-    </div><!--end of back div-->
-  </div> <!--end of the card div-->
+        <% @artist.albums.each do |album| %>
+        <%= link_to image_tag(album.image, :class => 'album_thumbnail'), album  %>
+        <% end %>
 
-</div><!--end of previous albums div-->
-<% end %>
 
-<div class="controls">
-  <%= link_to 'edit artist', edit_artist_path(@artist) %>
-
-  <!-- i think the below will make it only visible to admins? -->
-  <% if @current_user.admin? %>
-  <%= link_to 'delete artist', artist_path(@artist), :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+  </div><!--end of previous albums div-->
   <% end %>
-</div>
+
+  <div class="controls">
+    <%= link_to 'edit artist', edit_artist_path(@artist) %>
+
+    <!-- i think the below will make it only visible to admins? -->
+    <% if @current_user.admin? %>
+    <%= link_to 'delete artist', artist_path(@artist), :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+    <% end %>
+  </div>
+</div> <!--end of artist show div-->
