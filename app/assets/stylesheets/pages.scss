@@ -204,6 +204,34 @@ nav {
 
 } //end of dashpage
 
+/////////NOTE USER FAVE ARTISTS//////////
+.fave-artists-container {
+  display: grid;
+  grid-template-columns: 4(repeat, 1fr);
+
+  .artist_thumbnail {
+    grid-column: auto;
+  }
+
+}
+
+
+//////////////FORMS//////////////
+
+.album-artist-form {
+  padding: 1em 0 0 2em;
+}
+
+.form-group {
+  margin: 0 auto;
+  max-width: 80vw;
+  padding-bottom: 2em;
+
+}
+
+
+
+
 
 
 

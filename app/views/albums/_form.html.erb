@@ -1,26 +1,37 @@
-<%= form_for @album do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
 
-<%= f.label :artist_id %>
-<%= f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true %>
+<div class="form-group">
 
-<%= f.label :date %>
-<%= f.date_field :date %>
+  <%= form_for @album do |f| %>
 
-<%# trying to use simple_format below, not sure if syntax is right? %>
-<%= f.label :tracks%>
-<%= f.text_area :tracks  %>
+<div class="form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title, :class => 'form-control', :id => 'exampleFormControlInput1' %>
+</div>
 
-<%= f.label :image %>
-<%= f.file_field :image %>
+<div class="form-group">
 
-<!-- <div class="field"> -->
-<%# form.label :link %><br>
-<!-- this is the choose file button/section -->
-<%# form.file_field :link %>
-<!-- </div> -->
+  <%= f.label :date %>
+  <%= f.date_field :date, :class => 'form-control', :id => 'exampleFormControlInput1' %>
+</div>
 
-<%# TODO NEED to add pressing info, possibly in drop down or maybe instead let user input themselves? idea was to use API, dont understand how they work, or the nokogiri thing but also dont understand. %>
-<%= f.submit %>
-<% end %>
+<div class="form-group">
+
+  <%= f.label :tracks%>
+  <%= f.text_area :tracks, :class => "form-control", :id => "exampleFormControlTextarea1"  %>
+</div>
+
+<div class="form-group">
+
+  <%= f.label :artist_id %>
+  <%= f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true, :class => "form-control", :id => "exampleFormControlSelect1" %>
+
+</div>
+
+<div class="form-group">
+  <%= f.label :image, :class =>"label-control" %><br />
+  <%= f.file_field :image %>
+</div>
+
+  <%= f.submit %>
+  <% end %>
+</div>

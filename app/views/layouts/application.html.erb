@@ -26,17 +26,25 @@
 
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Add a freshy</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Artists</a>
         <div class="dropdown-menu">
-          <%= link_to 'Add New Artist', new_artist_path, :class => "dropdown-item" %>
-          <%= link_to 'Add New Album', new_album_path, :class => "dropdown-item" %>
-          <div class="dropdown-divider"></div>
             <%= link_to 'All Artists', artists_path, :class => "dropdown-item" %>
-            <%= link_to 'All Tunes', albums_path, :class => "dropdown-item" %>
+
+          <div class="dropdown-divider"></div>
+            <%= link_to 'Add New Artist', new_artist_path, :class => "dropdown-item" %>
         </div>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Albums</a>
+          <div class="dropdown-menu">
+            <%= link_to 'All Tunes', albums_path, :class => "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+
+              <%= link_to 'Add New Album', new_album_path, :class => "dropdown-item" %>
+          </div>
       </li>
       <li class="nav-item">
-          <%= link_to "Sign Out #{@current_user.username} ", login_path, :method => 'delete', :class => "nav-link" %>
+          <%= link_to "Sign Out #{@current_user.username.capitalize} ", login_path, :method => 'delete', :class => "nav-link" %>
       </li>
 
         <%= link_to 'Admin Area', users_path if @current_user.admin? %>

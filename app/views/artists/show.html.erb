@@ -11,12 +11,24 @@
 
 <div class="prev_albums">
   <!-- wanted to 'dig' to album images? also want to put tracks on back of images but dont know how to do that yet, not sure if this link around the image will work at all.  -->
-  <% @artist.albums.each do |album| %>
-  <%= link_to image_tag(album.image, :class => 'album_thumbnail'), album  %>
-  <% end %>
+  <div class="thecard">
 
+    <div class="thefront">
 
-</div>
+      <% @artist.albums.each do |album| %>
+      <%= link_to image_tag(album.image, :class => 'album_thumbnail'), album  %>
+      <% end %>
+    </div> <!--end of the front div-->
+    <div class="theback">
+      <% @artist.albums.each do |album| %>
+      <% if album.tracks.present? %>
+      <p>Track List: <%= simple_format album.tracks, :class => "mini-tracks" %>  </p>
+      <% end %>
+      <% end %>
+    </div><!--end of back div-->
+  </div> <!--end of the card div-->
+
+</div><!--end of previous albums div-->
 <% end %>
 
 <div class="controls">

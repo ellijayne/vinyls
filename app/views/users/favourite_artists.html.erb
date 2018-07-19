@@ -1,6 +1,15 @@
-<% @favourite_artists.each do |artist| %>
-<p><%= artist.name %></p>
+<div class="fave-artists-container">
 
-<%= link_to 'Remove from Favourite Artists',
-user_favourite_artist_destroy_path(@current_user, artist.id), :method => 'delete' %>
+
+<% @favourite_artists.each do |artist| %>
+  <p><%= artist.name %></p>
+
+  <% if artist.image.present? %>
+  <%= image_tag artist.image, :alt => artist.name, :class => 'artist_thumbnail' %>
+  <% end %>
+
+  <%= link_to 'Remove from Favourite Artists',
+  user_favourite_artist_destroy_path(@current_user, artist.id), :method => 'delete' %>
 <% end %>
+
+</div>
