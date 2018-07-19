@@ -26,14 +26,14 @@ body {
 }
 
 body.pages-home.logged-in {
-   background-image: url("records_hands.jpg");
+   background-image: image-url("records_hands.jpg");
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
 }
 
 body.pages-home { //if user not logged in
-  background-image: url("recordspinning.svg");
+  background-image: image-url("recordspinning.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
