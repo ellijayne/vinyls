@@ -555,12 +555,17 @@ nav {
   a:hover {
     color: $hoverfont;
   }
-  .artist-info {
+  .artist-controller {
     max-width: 500px;
     text-align: center;
   }
+  .artist-info {
+    max-width: 500px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+  }
 }
-
 
 ///////IMAGES CSS ///////
 

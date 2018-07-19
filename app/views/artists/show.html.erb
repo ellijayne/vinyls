@@ -24,7 +24,7 @@
   </div><!--end of previous albums div-->
   <% end %>
 
-  <div class="artist-info">
+  <div class="artist-controller">
       <%= link_to 'Add to Favourite Artists', user_favourite_artists_add_path(@current_user, :artist_id => @artist.id), :method => 'post' %> |
     <%= link_to 'edit artist', edit_artist_path(@artist) %>
 
