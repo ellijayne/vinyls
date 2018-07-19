@@ -440,7 +440,17 @@ nav {
   border-radius: 5px;
   backface-visibility: hidden;
   overflow: hidden;
+
+  img.album_feature {
+    width: 100%;
+    height: auto;
+    // max-width: initial;
+    // max-height: initial;
+  }
+
 }
+
+
 
 .back {
   position: absolute;
@@ -571,8 +581,8 @@ nav {
 
 //NOTE album and artists feature images
 .album_feature {
-  max-width: 50vw;
-  max-height: 50vh;
+  // max-width: 50vw;
+  // max-height: 50vh;
 }
 
 .artist_feature {

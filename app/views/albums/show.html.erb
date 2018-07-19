@@ -17,7 +17,7 @@
   </ul>
 
     <!-- dont know if below will work, wanted to display pressing -->
-    <% if @album.pressings.any? %>
+    <%# if @album.pressings.any? %>
       <ul>
         <% @album.pressings.each do |pressing| %>
           <li>Pressing: <%= link_to "See pressings", album_pressings_path(@album) %></li>
@@ -39,7 +39,7 @@
     </div><!--bottom artist show div-->
 
 
-  <% end %>
+  <% #end %>
   <div class="controls">
   <%= link_to 'Add to My Collection', user_favourite_albums_add_path(@current_user, :album_id => @album.id), :method => 'post' %> |
 
