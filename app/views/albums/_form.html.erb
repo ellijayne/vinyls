@@ -30,6 +30,7 @@
 <div class="form-group">
   <%= f.label :image, :class =>"label-control" %><br />
   <%= f.file_field :image %>
+    <%= image_tag @album.image, :class => 'teensy' if @album.image.present? %>
 </div>
 
   <%= f.submit %>
