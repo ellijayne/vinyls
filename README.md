@@ -9,7 +9,7 @@ This is a ***very*** basic Ruby app using Rails framework. The app lets you sear
 ##Operating instructions
 1. Visit <a href="https://enigmatic-savannah-13785.herokuapp.com/">the app here</a> :point_left:
 2. Enjoy our lovely landing page:
-![ScreenShot](/assets/images/landing.png?raw=true)
+![ScreenShot](https://res.cloudinary.com/ellijayne/image/upload/v1532047585/landing_page.png)
 3. If you're new to the site create a new account in seconds by clicking the 'Sign up' button and entering your details:
 ![ScreenShot](signup.png)
 3. Upon Sign-in/ Sign-up you will be redirected to your 'dash' page. This contained links to your favourite artists and vinyl collection:
