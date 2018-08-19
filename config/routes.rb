@@ -19,11 +19,16 @@ root :to => 'pages#home'
       delete '/favourite_artists/:artist_id' => 'users#destroy_favourite_artist', :as => :favourite_artist_destroy
     end
 
+    # ALBUMS!!
     resources :albums, :only => [:index, :show, :new, :create, :edit, :update, :delete] do
       get '/pressings' => 'pressings#album_index'
     end
 
+    delete '/albums/:id' => 'albums#destroy', :as => :album_destroy
+
     resources :artists, :only => [:index, :show, :new, :create, :edit, :update, :delete]
+    delete '/artists/:id' => 'artists#destroy', :as => :artist_destroy
+
     resources :pressings, :only => [:index, :show, :new, :create]
 
   # get 'session/new' #DONT KNOW WHERE THIS CODE CAME FROM?
