@@ -1,76 +1,70 @@
-
 <div class="album-show">
 
   <h1><%= @album.title %></h1>
 
   <div class="info-album-show">
 
+    <ul>
+      <% if @album.date.present? %>
+          <li>Realeased: <%= @album.date.strftime '%e %b %Y' %></li>
+      <% end %>
 
-  <ul>
-    <% is @album.date.present? %>
-    <li>Realeased: <%= @album.date.strftime '%e %b %Y' %></li>
-    <% end %>
 
+      <% if @album.artist.present? %>
+        <li>Artist: <%= link_to @album.artist.name, @album.artist %></li>
+      <% end %>
 
-    <% if @album.artist.present? %>
-      <li>Artist: <%= link_to @album.artist.name, @album.artist %></li>
-    <% end %>
+    </ul>
 
-  </ul>
-
-    <!-- dont know if below will work, wanted to display pressing -->
-    <%# if @album.pressings.any? %>
-      <ul>
+    <ul>
         <% @album.pressings.each do |pressing| %>
-          <li>Pressing: <%= link_to "See pressings", album_pressings_path(@album) %></li>
-          <li>Color: <%= pressing.color %></li>
-          <li>Pressed in: <%= pressing.year %></li>
+            <li>Pressing: <%= link_to "See pressings", album_pressings_path(@album) %></li>
+            <li>Color: <%= pressing.color %></li>
+            <li>Pressed in: <%= pressing.year %></li>
           <% if pressing.limited == true %>
-          <li>Limited</li>
-        <% end %>
+            <li>Limited</li>
+          <% end %>
           <% if pressing.quantity_pressed.present? %>
-          <li>Quantity Pressed: <%= pressing.quantity_pressed %></li>
+            <li>Quantity Pressed: <%= pressing.quantity_pressed %></li>
           <% end %>
           <% if pressing.weight.present? %>
-          <li>Weight: <%= pressing.weight %></li>
+            <li>Weight: <%= pressing.weight %></li>
+          <% end %>
         <% end %>
-        <% end %>
 
-      </ul>
+    </ul>
 
-    </div><!--bottom artist show div-->
+  </div><!--bottom artist show div-->
 
 
-  <% #end %>
+
   <div class="controls">
-  <%= link_to 'Add to My Collection', user_favourite_albums_add_path(@current_user, :album_id => @album.id), :method => 'post' %> |
+    <%= link_to 'Add to My Collection', user_favourite_albums_add_path(@current_user, :album_id => @album.id), :method => 'post' %> |
 
 
-      <%= link_to 'edit album', edit_album_path(@album) %>
+    <%= link_to 'edit album', edit_album_path(@album) %>
 
 
-  <% if @current_user.admin? %>
+    <% if @current_user.admin? %>
       <%= link_to 'delete album', album_path(@album), :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
-      <% end %>
-    </div>
+    <% end %>
+  </div><!--end of controlls div-->
 
 
   <div class="card">
     <div class="content">
 
       <div class="front">
-        <%# if @album.image.present? %>
+
         <%= image_tag @album.image, :alt => @album.title, :class => 'album_feature' %>
-        <%# end %>
+
       </div><!--end of front div-->
 
       <div class="back">
-        <%# if @album.tracks.present? %>
         <p>Track List: <%= simple_format @album.tracks %>  </p>
-        <%# end %>
       </div><!--end of back div-->
 
     </div> <!--end of content div -->
   </div><!--end of card div-->
 
-</div>
+</div><!--end of whole page div-->
