@@ -6,7 +6,7 @@
 
     <ul>
       <% if @album.date.present? %>
-          <li>Realeased: <%= @album.date.strftime '%e %b %Y' %></li>
+          <li>Realeased: <%= @album.date&.strftime('%e %b %Y') %></li>
       <% end %>
 
 
